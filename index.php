@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8"
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Omnifood is a premium food delivery service with the mission to bring affordabe and healthy meals to as many people as possible.">
         
@@ -395,9 +395,30 @@
             <h2>We're happy to hear from you</h2>
         </div>
         <div class="row">
-            <form method="post" action="#" class="contact-form">
+            <form method="post" action="mailer-new.php" class="contact-form">
                 
                 <div class= "row">
+                    <div class="row">
+                    
+                    <?php
+                        
+                        if($_GET['success'] == 1){
+                            
+                            echo "<div class= \ "form-messages success\">
+                         Thank you! Your message has been sent.
+                                 </div> ";
+                        }
+
+                         if($_GET['success'] == -1) {
+                            
+                            echo "<div class= \ "form-messages oops\">
+                         Oops! Something went wrong. Please try again.
+                                 </div> ";
+                        }
+                    
+                    ?>
+                        
+                    </div>
                     
                     <div class= "row">
                     
@@ -431,7 +452,7 @@
                     <option value="ad">Advertisement</option>
                     <option value="other">Other</option>
                     </select>
-            </div>
+                </div>
              </div>
                 
                  <div class= "row">
